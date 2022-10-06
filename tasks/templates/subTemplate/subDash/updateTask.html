@@ -1,0 +1,33 @@
+{% extends 'baseDash.html' %}
+{% load static%}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/create.css' %}" />
+{% endblock %}
+
+{% block content %}
+<main class="content-dash U-flex U-flex-center">
+    <div class="returnDash U-flex">
+        <a href="/dashboardtask/">
+            <i class='bx bx-chevron-left'></i>
+        </a>
+    </div>
+    <form class="create-task U-flex" method="POST">{% csrf_token %}
+        <h2>Actualizar TAREA</h2>
+        <div class="task-input U-flex U-flex-center">
+            <div class="instruction">
+                <h2>Guia</h2>
+                <p>Como rellenar el campo "cuando" ejemplo: 'Viernes - 2:00 pm' o 'Viernes - 14:00'</p>
+            </div>
+            {% if task.important %}
+            <input type="text" value="Si" name="importantInput" class="input-first" placeholder="Es importante: Si No" autofocus="autofocus">
+            {% else %}
+            <input type="text" value="No" name="importantInput" class="input-first" placeholder="Es importante: Si No" autofocus="autofocus">
+            {% endif %}
+            <input type="text" value="{{task.title}}" name="title" class="input-first" placeholder="Titulo">
+            <input type="text" value="{{task.ejecution}}" name="time" class="input-first" placeholder="Cuando">
+            <textarea type="text" name="description" class="input-first textDescription" placeholder="Descripción">{{task.description}}</textarea>
+        </div>
+        <button type="submit">Actualizar</button>
+    </form>
+</main>
+{% endblock %}

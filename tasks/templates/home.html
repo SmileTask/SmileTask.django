@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block head %}
+    <!-- incorporacion de los iconos de boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+{% endblock %}
+
+{% block nav %}
+    <header>
+        <nav>
+            <a href="/">
+                <img class='icon2' src="{% static 'imgs/logo.png' %}" alt="logo-smile-task" class="logo-img">
+            </a>
+            <h2 class="smileNav icon3">Smile Task</h2>
+        </nav>
+    </header>
+{% endblock %}
+
+
+{% block content %}
+<main class="main-container U-flex U-flex-center">
+    <div class="icons U-flex">
+        <a href="https://github.com/Camilo1423" target="_blank"><i class='bx bxl-github icon1'></i></a>
+        <a href="https://www.linkedin.com/in/andr%C3%A9s-roa-9981ba169/" target="_blank"><i class='bx bxl-linkedin icon2'></i></a>
+        <a href="https://www.facebook.com/camiloandres.morenoroa/" target="_blank"><i class='bx bxl-facebook icon3'></i></a>
+        <a href="https://www.instagram.com/taurodev/" target="_blank"><i class='bx bxl-instagram-alt icon4'></i></a>
+    </div>
+    <div class="content-info U-flex">
+        <div class="info_text">
+            <h3 class="text1">Bienvenid@ a</h3>
+            <h2 class="text2">Smile Task</h2>
+            <p class="text3">Detras de cada persona exitosa está la capacidad de respetar y administrar su tiempo para lograr sus metas. Esto es lo que hacemos en Smile Task</p>
+        </div>
+        <div class="info_btns">
+            {% if user.is_authenticated %}
+            <span class='login1'><a href="/dashboardtask/">Dashboard</a></span>
+            <span class='register2'><a href="/logoutuser/" class='register2'>Cerrar Sesión</a></span>
+            {% else %}
+            <span class='login1'><a href="/login/">Iniciar Sesión</a></span>
+            <span class='register2'><a href="/register/" class='register2'>Registrate</a></span>
+            {% endif %}
+        </div>
+    </div>
+    <div class="logoSmile">
+        <!-- {% load static %} -->
+        <section class="Smile-img">
+            <img src="{% static 'imgs/logoSmile.png' %}" alt="logo-smile-task" class="logo-img-grand ft4">
+        </section>
+    </div>
+</main>
+{% endblock %}
+
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/scrollreveal.js' %}"></script>
+{% endblock %}
+

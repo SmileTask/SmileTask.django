@@ -1,0 +1,137 @@
+/* Importacion de la fuente roboto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  /* family font */
+  --fnt-family: "Roboto", sans-serif;
+
+  /* font weight */
+  --fnt-thin: 100;
+  --fnt-light: 300;
+  --fnt-regular: 400;
+  --fnt-medium: 500;
+  --fnt-bold: 700;
+  --fnt-black: 900;
+
+  --one-background: #272727;
+  --two-background: #c8b936;
+  --three-background: #ffffff;
+  --four-background: #373737;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--fnt-family);
+  background-color: var(--one-background);
+}
+
+/* clases estandar */
+
+.U-flex {
+  display: flex;
+}
+
+.U-flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* estilos de thumb */
+::-webkit-scrollbar {
+  width: 0.4rem;
+  background: var(--one-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--two-background);
+  border-radius: 10px;
+}
+
+/* estilos de la nav */
+.header-Dash {
+  width: 315px;
+  height: 100vh;
+  background-color: #313131;
+  box-shadow: 15px 0px 30px rgba(29, 29, 29, .25);
+  position: fixed;
+  padding: 60px 10px;
+  flex-direction: column;
+  justify-content: space-between!important;
+  text-align: left;
+}
+
+.header-Dash .header_logo h2 {
+  font-weight: var(--fnt-medium);
+  font-size: 36px;
+  color: var(--two-background);
+  margin-left: 15px;
+}
+
+.header-Dash nav ul {
+  list-style: none;
+}
+
+.header-Dash nav ul li {
+  margin: 20px 0;
+}
+
+.header-Dash nav ul li a {
+  justify-content: flex-start!important;
+  color: var(--two-background);
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: .3s;
+}
+
+.header-Dash nav ul li a:hover {
+  box-shadow: -3px -3px 13px rgba(128, 128, 128, 0.25), 
+    3px 3px 13px #161616;
+}
+
+.header-Dash nav ul li a i {
+  font-size: 30px;
+}
+
+.header-Dash nav ul li a p {
+  font-size: 20px;
+  margin-left: 20px;
+  font-weight: var(--fnt-light);
+}
+
+.header-Dash .header_logout a {
+  color: var(--two-background);
+  text-decoration: none;
+  padding: 2px 20px;
+  border-radius: 7px;
+  transition: .3s;
+}
+
+.header-Dash .header_logout a:hover {
+  box-shadow: -3px -3px 13px rgba(128, 128, 128, 0.25), 
+    3px 3px 13px #161616;
+}
+
+.header-Dash .header_logout a i {
+  font-size: 30px;
+}
+
+.header-Dash .header_logout a p {
+  font-size: 20px;
+  margin: 10px 10px;
+  font-weight: var(--fnt-light);
+}
+
+.dashboard-content {
+  margin-left: 400px;
+  width: 79%;
+  height: 100vh;
+  padding: 20px;
+}
+
+

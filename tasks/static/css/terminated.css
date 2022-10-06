@@ -1,0 +1,78 @@
+.content-dash {
+    width: 100%;
+    height: auto;
+}
+
+.taskTerminated {
+    width: 100%;
+    padding: 0 30px;
+}
+
+.cardTask {
+    margin: 20px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardTask .dataNumber {
+    padding: 20px 25px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 13px rgba(18, 18, 18, 0.88), 
+    -2px -2px 13px rgba(218, 218, 218, 0.25);
+    color: var(--two-background);
+    font-weight: var(--fnt-medium);
+}
+
+.cardTask .taskPrincipal {
+    color: var(--two-background);
+}
+
+.cardTask .taskPrincipal .taskInformation span {
+    font-weight: var(--fnt-light);
+}
+
+.cardTask .taskPrincipal .taskDescription p {
+    font-weight: var(--fnt-regular);
+    color: var(--three-background);
+}
+
+.taskPrincipal {
+    text-align: left;
+    width: 40%;
+}
+
+.important {
+    width: 10%;
+}
+
+.important {
+    padding: 4px;
+    border-radius: 3px;
+    color: var(--three-background);
+}
+
+.check {
+    background-color: #2ECC71;
+}
+
+.noCheck {
+    background-color: #C0392B ;
+}
+
+.taskButtons a {
+    padding: 4px 30px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: var(--two-background);
+    transition: .3s;
+    font-weight: var(--fnt-medium);
+    box-shadow: 2px 2px 13px rgba(18, 18, 18, 0.88), -2px -2px 13px rgba(173, 173, 173, 0.25);
+}
+
+.taskButtons a:hover {
+    background-color: var(--four-background);
+}
+
+hr {
+    border-color: #505050;
+}

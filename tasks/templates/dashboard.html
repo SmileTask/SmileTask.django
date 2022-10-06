@@ -1,0 +1,78 @@
+{% extends 'baseDash.html' %} {% load static%} {% block head %}
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}" />
+{% endblock %} {% block content %}
+<main class="content-dash">
+  <div class="user-info U-flex">
+    <a href="/dashboardtask/create/" class="createBtn U-flex U-flex-center">
+      <p>Nueva Tarea</p>
+      <i class='bx bx-list-plus'></i>
+    </a>
+    <p>Bienvenid@ <span>{{nombre}}</span></p>
+  </div>
+  <div class="taskContainer U-flex">
+    <div class="containerCard U-flex">
+        <div class="inicio U-flex U-flex-center">
+            <i class='bx bx-task' ></i>
+            <h2 class="titleSection">TAREAS IMPORTANTES</h2>
+        </div>
+        {% for task in task %}
+        {% if task.important == True%}
+        <div class="cardTask U-flex U-flex-center">
+            <p class="dataNumber">{{forloop.counter}}</p>
+            <div class="taskPrincipal">
+                <div class="taskInformation">
+                    <h2>{{task.title}}</h2>
+                    <h3>{{task.ejecution}}</h3>
+                </div>
+                <div class="taskDescription">
+                    <h3>Descripción:</h3>
+                    <p>{{task.description}}</p>
+                </div>
+                <div class="dataCreate U-flex">
+                    <p>Registrado:</p>
+                    <p>{{task.created}}</p>
+                </div>
+            </div>
+            <div class="taskButtons">
+                <a href="{% url 'task_updatetask' task.id %}">Actualizar</a>
+                <a href="{% url 'task_terminated' task.id %}">Terminar</a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class="containerCard U-flex">
+        <div class="inicio U-flex U-flex-center">
+            <i class='bx bx-task-x' ></i>
+            <h2 class="titleSection">TAREAS BÁSICAS</h2>
+        </div>
+        {% for task in task %}
+        {% if task.important == False %}
+        <div class="cardTask U-flex U-flex-center">
+            <p class="dataNumber">{{forloop.counter}}</p>
+            <div class="taskPrincipal">
+                <div class="taskInformation">
+                    <h2>{{task.title}}</h2>
+                    <h3>{{task.ejecution}}</h3>
+                </div>
+                <div class="taskDescription">
+                    <h3>Descripción:</h3>
+                    <p>{{task.description}}</p>
+                </div>
+                <div class="dataCreate U-flex">
+                    <p>Registrado:</p>
+                    <p>{{task.created}}</p>
+                </div>
+            </div>
+            <div class="taskButtons">
+                <a href="{% url 'task_updatetask' task.id %}">Actualizar</a>
+                <a href="{% url 'task_terminated' task.id %}">Terminar</a>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    
+  </div>
+</main>
+{% endblock %}

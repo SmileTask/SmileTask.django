@@ -1,0 +1,106 @@
+/* cabecera del home */
+header {
+    width: 100%;
+    height: 12vh;
+    padding-top: 20px;
+  }
+  
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  header nav h2 {
+    font-weight: var(--fnt-medium);
+    font-size: 32px;
+    color: var(--two-background);
+  }
+  
+  /* contenido principal del home */
+  
+  .main-container {
+    width: 100%;
+    height: 75vh;
+  }
+  
+  .main-container .icons {
+    width: 10%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .icons a {
+    color: var(--two-background);
+    margin: 6px 0;
+    padding: 3px 4px;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  
+  .icons a:hover {
+    box-shadow: -1px -1px 4px rgba(174, 174, 174, 0.25),
+      1px 1px 4px rgba(0, 0, 0, 0.56);
+  }
+  
+  .icons a i {
+    padding-top: 1px;
+    font-size: 24px;
+  }
+  
+  .main-container .content-info {
+    height: 70%;
+    width: 40%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--three-background);
+  }
+  
+  .content-info .info_text h3,
+  .info_text p {
+    font-weight: var(--fnt-regular);
+    font-size: 20px;
+  }
+  
+  .info_text p {
+    padding-right: 200px;
+  }
+  
+  .content-info .info_text h2 {
+    font-weight: var(--fnt-medium);
+    font-size: 110px;
+    color: var(--two-background);
+  }
+  
+  .info_btns {
+    width: 100%;
+  }
+  
+  .info_btns a:nth-child(1) {
+    margin-right: 58px;
+  }
+  
+  .content-info .info_btns a {
+    font-size: 20px;
+    font-weight: var(--fnt-regular);
+    color: var(--two-background);
+    text-decoration: none;
+    padding: 13px 85px;
+    box-shadow: -6px -6px 13px rgba(160, 160, 160, 0.25), 
+      6px 6px 13px #161616;
+    transition: .3s;
+    border-radius: 6px;
+  }
+  
+  .info_btns a:hover {
+      background-color: var(--four-background);
+  }
+  
+  .logoSmile {
+    margin-right: 200px;
+  }

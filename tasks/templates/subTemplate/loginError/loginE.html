@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+{% block head %}
+    <!-- incorporacion de los iconos de boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="https://unpkg.com/scrollreveal"></script>
+{% endblock %}
+
+
+
+{% block content %}
+<main class="main-container U-flex U-flex-center">
+    <div class="btnReturn">
+        <a href="/" class="icon1"><i class='bx bx-chevron-left'></i></a>
+    </div>
+    <div class="container_login U-flex U-flex-center icon2">
+        <h2 class="login_title icon3">Hola de nuevo ;D</h2>
+        <form method="POST" class="form-login U-flex U-flex-center">{% csrf_token %}
+            <div class="failPassword U-flex U-flex-center icon5" style="background-color: #C0392B;">
+                <i class='bx bxs-error-alt'></i>
+                <p>Ups!, tus credenciales no son correctas</p>
+            </div>
+            <div class="login-inputs">
+                <div class="inputs-info">
+                    <h2 class="icon4">¿No tienes cuenta? <a href="/register/">Create una cuenta aquí</a></h2>
+                </div>
+                <div class="inputs-type U-flex U-flex-center icon5">
+                    <input type="text" name="username" id="userName" placeholder="User" autocomplete="new-password" required>
+                    <input type="password" name="password" id="passwordText" placeholder="Password" autocomplete="new-password" required>
+                </div>
+            </div>
+            <span class="icon6"><button type="submit" class="btnLogin">Ingresar</button></span>
+        </form>
+    </div>
+</main>
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}
+
+{% block script %}
+    
+{% endblock %}

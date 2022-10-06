@@ -1,0 +1,40 @@
+{% extends 'baseDash.html' %}
+{% load static%}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/terminated.css' %}" />
+{% endblock %}
+
+{% block content %}
+<main class="content-dash U-flex">
+    <div class="taskTerminated">
+        {% for task in task %}
+        <div class="cardTask U-flex">
+            <p class="dataNumber">{{forloop.counter}}</p>
+            <div class="taskPrincipal">
+                <div class="taskInformation">
+                    <h2><strike>{{task.title}} - <span>{{task.ejecution}}</span></strike></h2>
+                </div>
+                <div class="taskDescription">
+                    <h3>Descripción:</h3>
+                    <p>{{task.description}}</p>
+                </div>
+            </div>
+            {% if task.important%}
+            <div class="important check U-flex U-flex-center">
+                <p><i class='bx bx-check' ></i> Importante</p>
+            </div>
+            {% else %}
+            <div class="important noCheck U-flex U-flex-center">
+                <p><i class='bx bx-x' ></i> No importante</p>
+            </div>
+            {% endif %}
+            <div class="taskButtons">
+                <a href="{% url 'task_delete' task.id %}">Eliminar</a>
+            </div>
+        </div>
+        <br>
+        <hr>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

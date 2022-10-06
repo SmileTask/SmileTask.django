@@ -1,0 +1,33 @@
+{% extends 'baseDash.html' %}
+{% load static%}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/create.css' %}" />
+{% endblock %}
+
+{% block content %}
+<main class="content-dash U-flex U-flex-center">
+    <div class="returnDash U-flex">
+        <a href="/dashboardtask/">
+            <i class='bx bx-chevron-left'></i>
+        </a>
+    </div>
+    <form class="create-task U-flex" method="POST">{% csrf_token %}
+        <h2>CREAR TAREA</h2>
+        <div class="task-input U-flex U-flex-center">
+            <div class="failPassword U-flex U-flex-center icon5" style="background-color: #C0392B;">
+                <i class='bx bxs-error-alt'></i>
+                <p>Ups!, solo se acepta Si y No</p>
+            </div>
+            <div class="instruction">
+                <h2>Guia</h2>
+                <p>Como rellenar el campo "cuando" ejemplo: 'Viernes - 2:00 pm' o 'Viernes - 14:00'</p>
+            </div>
+            <input type="text" name="importantInput" class="input-first" placeholder="Es importante: Si No" required>
+            <input type="text" name="title" class="input-first" placeholder="Titulo" required>
+            <input type="text" name="time" class="input-first" placeholder="Cuando" required>
+            <textarea type="text" name="description" class="input-first textDescription" placeholder="Descripción" required></textarea>
+        </div>
+        <button type="submit">Crear</button>
+    </form>
+</main>
+{% endblock %}

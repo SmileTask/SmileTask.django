@@ -1,0 +1,136 @@
+.content-dash {
+  width: 100%;
+  height: 100%;
+}
+
+.user-info {
+  width: 97%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--two-background);
+  font-size: 24px;
+}
+
+.user-info .createBtn {
+  color: var(--two-background);
+  font-size: 20px;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  box-shadow: -3px -3px 13px rgba(128, 128, 128, 0.25), 
+    3px 3px 13px #161616;
+    transition: .3s;
+}
+
+.user-info .createBtn:hover {
+  background-color: var(--four-background);
+}
+
+.user-info .createBtn i {
+  font-size: 28px;
+  margin-left: 10px;
+}
+
+.user-info p span {
+  font-weight: var(--fnt-medium);
+}
+
+.taskContainer {
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 90%;
+  height: 300px;
+  justify-content: space-between;
+}
+
+.containerCard {
+  flex-direction: column;
+  width: 45%;
+}
+
+.inicio {
+  margin-bottom: 20px;
+}
+
+.containerCard .titleSection,
+.containerCard .inicio i {
+  color: var(--two-background);
+  font-size: 30px;
+}
+
+.containerCard .inicio i {
+  margin-right: 15px;
+}
+
+.cardTask {
+  flex-direction: column;
+  text-align: center;
+  width: 70%;
+  padding: 25px 20px;
+  margin: 15px auto;
+  border-radius: 11px;
+  box-shadow: 2px 2px 13px rgb(18, 18, 18), -2px -2px 13px rgba(218, 218, 218, 0.25);
+}
+
+.cardTask .dataNumber {
+  width: 90%;
+  /* box-shadow: 2px 2px 13px rgba(18, 18, 18, 0.88), -2px -2px 13px rgba(218, 218, 218, 0.25); */
+  font-size: 20px;
+  color: var(--two-background);
+  border-radius: 10px;
+}
+
+.taskPrincipal {
+  width: 90%;
+}
+
+.taskInformation {
+  margin: 20px 0;
+}
+
+.taskInformation h2 {
+  font-size: 26px;
+  text-transform: uppercase;
+  color: var(--two-background);
+}
+
+.taskInformation h3 {
+  color: var(--three-background);
+  font-weight: var(--fnt-light);
+}
+
+.taskDescription {
+  text-align: left;
+  font-size: 16px;
+  color: var(--three-background);
+}
+
+.dataCreate {
+  justify-content: space-between;
+  margin: 20px 0;
+  color: var(--two-background);
+}
+
+.dataCreate p:nth-child(2) {
+  font-weight: var(--fnt-bold);
+  color: var(--three-background);
+}
+
+.taskButtons {
+  width: 100%;
+}
+
+.taskButtons a {
+  text-decoration: none;
+  color: var(--two-background);
+  padding: 5px 30px;
+  margin: 0 10px;
+  border-radius: 4px;
+  transition: .3s;
+  box-shadow: 2px 2px 13px rgba(18, 18, 18, 0.6), -2px -2px 13px rgba(218, 218, 218, 0.132);
+}
+
+.taskButtons a:hover {
+  background-color: var(--four-background);
+}

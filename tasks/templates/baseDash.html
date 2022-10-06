@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      rel="shortcut icon"
+      href="{% static 'favicon.ico' %}"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    {% block head %}{% endblock %}
+    <title>Dashboard | Smile Task</title>
+  </head>
+  <body>
+    <main class="main-dashboard">
+      <header class="header-Dash U-flex U-flex-center">
+        <div class="header_logo U-flex U-flex-center">
+          <img
+            src="https://res.cloudinary.com/tauro-dev/image/upload/v1665015076/Logo_yhobpq.png"
+            alt="logo-Smile-Task"
+          />
+          <h2 class="header_dash">Dashboard</h2>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="/dashboardtask/" class="U-flex U-flex-center">
+                <i class="bx bxs-home"></i>
+                <p>Inicio</p>
+              </a>
+            </li>
+            <li>
+              <a href="/dashboardtask/create/" class="U-flex U-flex-center">
+                <i class='bx bx-add-to-queue'></i>
+                <p>Crear Tarea</p>
+              </a>
+            </li>
+            <li>
+              <a href="/dashboardtask/terminate/" class="U-flex U-flex-center">
+                <i class='bx bx-check-double' ></i>
+                <p>Tareas Terminadas</p>
+              </a>
+            </li>
+            <li>
+              <a href="" class="U-flex U-flex-center">
+                <i class="bx bxs-envelope"></i>
+                <p>Contacto</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header_logout">
+          <a href="/logoutuser/" class="U-flex U-flex-center">
+            <i class='bx bxs-log-out' ></i>
+            <p>Cerrar Sesión</p>
+          </a>
+        </div>
+      </header>
+
+      <main class="dashboard-content U-flex">
+        {% block content %}
+        
+        {% endblock %}
+      </main>
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Register{% endblock %}
+{% block head %}
+    <!-- incorporacion de los iconos de boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <script src="https://unpkg.com/scrollreveal"></script>
+{% endblock %}
+
+
+
+{% block content %}
+<main class="main-container U-flex U-flex-center">
+    <div class="btnReturn">
+        <a href="/" class="icon1"><i class='bx bx-chevron-left'></i></a>
+    </div>
+    <div class="register-form U-flex U-flex-center icon1">
+        <div class="form_info">
+            <h3 class="icon2">EMPIEZA GRATIS</h3>
+            <h2 class="icon3">Crear una cuenta</h2>
+            <h3 class="icon4">¿Ya tienes usuario? <a href="/login/">Ingresa aquí</a></h3>
+        </div>
+        <form method="POST" class="form-register U-flex U-flex-center">{% csrf_token %}
+            <div class="inputs-type U-flex U-flex-center icon5">
+                <div class="type">
+                    <div class="type-first U-flex">
+                        <input type="text" name="fisrtname" id="fisrtname" placeholder="Insert Your First Name" autocomplete="off" required>
+                        <input type="text" name="lastname" id="lastname" placeholder="Insert Your Last Name" autocomplete="off" required>
+                    </div>
+                    <div class="type-second U-flex">
+                        <input type="text" name="username" id="username" placeholder="Insert Your User" autocomplete="off" required>
+                        <input type="text" name="email" id="email" placeholder="Insert Your email" autocomplete="off" required>
+                    </div>
+                    <input type="password" name="password1" id="password1" placeholder="Password" autocomplete="new-password" required>
+                    <input type="password" name="password2" id="password2" placeholder="Confirm Password" autocomplete="new-password" required>
+                </div>
+                <div class="terms-condition">
+                    <h2><a href="#">Terminos de uso</a> | <a href="#">Politicas de Smile Task</a></h2>
+                    <div class="checkpoint U-flex">
+                        <input type="checkbox" required>
+                        <p>Acepto las politicas de uso en smile task</p>
+                    </div>
+                </div>
+            </div>
+            <span class="icon6"><button type="submit" class="btnRegister">Registrate</button></span>
+        </form>
+    </div>
+</main>
+{% endblock %}
+
+{% block footer %}
+    {% include 'footer.html' %}
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/scrollreveal.js' %}"></script>
+{% endblock %}
